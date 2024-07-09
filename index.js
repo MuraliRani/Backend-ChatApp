@@ -10,6 +10,10 @@ import { app, server } from "./SocketIO/server.js";
 
 dotenv.config();
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 // middleware
 app.use(express.json());
 app.use(cookieParser());
@@ -19,10 +23,10 @@ const PORT = process.env.PORT || 3001;
 const URI = process.env.MONGODB_URI;
 
 try {
-    mongoose.connect(URI);
-    console.log("Connected to MongoDB");
+  mongoose.connect(URI);
+  console.log("Connected to MongoDB");
 } catch (error) {
-    console.log(error);
+  console.log(error);
 }
 
 //routes
@@ -30,5 +34,5 @@ app.use("/api/user", userRoute);
 app.use("/api/message", messageRoute);
 
 server.listen(PORT, () => {
-    console.log(`Server is Running on port ${PORT}`);
+  console.log(`Server is Running on port ${PORT}`);
 });
