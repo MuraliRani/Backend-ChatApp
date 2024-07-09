@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://mern-chat-application-frontend.netlify.app",
+    origin: "https://mern-chat-application-frontend.netlify.app/login",
     methods: ["GET", "POST"],
   },
 });
