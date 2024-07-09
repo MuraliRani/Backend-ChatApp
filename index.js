@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || "https://mern-chat-application-frontend.netlify.app/";
 const URI = process.env.MONGODB_URI;
 
 try {
